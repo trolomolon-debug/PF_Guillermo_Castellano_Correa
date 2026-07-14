@@ -1,0 +1,124 @@
+---
+// Componente Header con navegación profesional
+---
+
+<header class="header">
+  <div class="container header-content">
+    {/* Logo */}
+    <div class="logo">
+      <span class="logo-text">Café Aroma</span>
+    </div>
+
+    {/* Navegación */}
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    {/* CTA Button */}
+    <div class="header-cta">
+      <button class="btn btn-primary">Reservar</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+  }
+
+  .nav {
+    flex: 1;
+    margin: 0 var(--spacing-2xl);
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: var(--color-dark);
+    transition: color var(--transition-fast);
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--transition-fast);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .header-cta {
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .nav {
+      margin: var(--spacing-md) 0;
+      width: 100%;
+    }
+
+    .nav-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-md);
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+</style>

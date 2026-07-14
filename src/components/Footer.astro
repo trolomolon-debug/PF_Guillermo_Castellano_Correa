@@ -1,0 +1,265 @@
+---
+// Componente Footer profesional
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+        {/* Columna 1: Sobre nosotros */}
+        <div class="footer-section">
+          <h3 class="footer-title">Sobre Nosotros</h3>
+          <p class="footer-text">
+            Somos un equipo dedicado a crear experiencias culinarias extraordinarias. 
+            Con más de 15 años de trayectoria, combinamos tradición e innovación 
+            en cada plato.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+
+        {/* Columna 2: Enlaces útiles */}
+        <div class="footer-section">
+          <h3 class="footer-title">Enlaces Útiles</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        {/* Columna 3: Horarios */}
+        <div class="footer-section">
+          <h3 class="footer-title">Horarios</h3>
+          <ul class="footer-hours">
+            <li><span>Lunes - Viernes:</span> 12:00 - 23:00</li>
+            <li><span>Sábado:</span> 13:00 - 00:00</li>
+            <li><span>Domingo:</span> 13:00 - 22:00</li>
+            <li><span>Cerrado:</span> Martes</li>
+          </ul>
+        </div>
+
+        {/* Columna 4: Contacto */}
+        <div class="footer-section">
+          <h3 class="footer-title">Contacto</h3>
+          <div class="contact-info">
+            <p><strong>Teléfono:</strong></p>
+            <p><a href="tel:+34912345678">+34 91 234 5678</a></p>
+            
+            <p><strong>Email:</strong></p>
+            <p><a href="mailto:info@ppf.es">info@ppf.es</a></p>
+            
+            <p><strong>Dirección:</strong></p>
+            <p>Calle Principal, 123<br/>38001 Santa Cruz de Tenerife, España</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Footer bottom */}
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <p>&copy; 2024 PPF Gastronomía. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Términos de Servicio</a>
+          <span class="separator">•</span>
+          <a href="#">Política de Privacidad</a>
+          <span class="separator">•</span>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .footer-content {
+    padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Links de redes sociales */
+  .social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: all var(--transition-fast);
+    font-weight: 600;
+  }
+
+  .social-link:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
+  }
+
+  /* Footer links */
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-links a {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Horarios */
+  .footer-hours {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-hours li {
+    color: #d1d5db;
+    font-size: 0.95rem;
+  }
+
+  .footer-hours span {
+    font-weight: 600;
+    color: var(--color-white);
+  }
+
+  /* Información de contacto */
+  .contact-info {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .contact-info p {
+    color: #d1d5db;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-info p:nth-child(odd) {
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .contact-info a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg) 0;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .footer-bottom-content p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-links a {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-bottom-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .separator {
+    color: #6b7280;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-content {
+      padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-bottom-links {
+      justify-content: center;
+    }
+  }
+</style>

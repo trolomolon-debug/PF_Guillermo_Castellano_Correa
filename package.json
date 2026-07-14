@@ -1,0 +1,14 @@
+{
+  "name": "ppf-proyecto-web",
+  "version": "1.0.0",
+  "description": "Template profesional de Astro para negocio hostelero",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "latest"
+  }
+}

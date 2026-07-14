@@ -1,0 +1,214 @@
+---
+// Componente Hero profesional con imagen de fondo
+---
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        {/* Contenido de texto */}
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Café con aromas Inolvidables
+          </h1>
+          <p class="hero-subtitle">
+           Disfruta del mejor café de la zona, preparado con pasión y gran servicio de nuestro personal. Ven y vive la experiencia de nuesto café aroma, donde cada taza cuenta una historia.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">Nuestra Carta</button>
+            <button class="btn btn-outline">Reservar Mesa</button>
+          </div>
+        </div>
+
+        {/* Imagen Hero */}
+        <div class="hero-image">
+          <img 
+            src="../assets/Fotografía cafetería.jpg" 
+            alt="Plato gourmet presentado de forma profesional"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Indicador de scroll */}
+  <div class="scroll-indicator">
+    <span class="mouse"></span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .hero-text {
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-image img {
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Indicador de scroll */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    animation: bounce 2s infinite;
+  }
+
+  .mouse {
+    display: block;
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .mouse::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 2px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(12px);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .hero-image img {
+      max-height: 400px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-md);
+    }
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+import Card from './Card.astro';
+
+const services = [
+  {
+    title: "Menú Degustación",
+    description: "Una selección curada de nuestros mejores platos, diseñada para ofrecer una experiencia completa de sabores y técnicas culinarias modernas.",
+    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=300&fit=crop",
+    icon: "🍽️"
+  },
+  {
+    title: "Eventos Privados",
+    description: "Organiza tu celebración especial en nuestras instalaciones. Contamos con espacios elegantes y equipo profesional para eventos memorables.",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "🎉"
+  },
+  {
+    title: "Catering Empresarial",
+    description: "Servicios de catering personalizados para reuniones y eventos corporativos. Menús adaptados a tus necesidades y presupuesto.",
+    image: "https://images.unsplash.com/photo-1616734755909-bb016ce64930?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "👔"
+  },
+  {
+    title: "Clases de Cocina",
+    description: "Aprende técnicas culinarias de nuestros chefs. Cursos prácticos e interactivos para todos los niveles de experiencia.",
+    image: "https://images.unsplash.com/photo-1736240844268-622147e570d4?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "👨‍🍳"
+  }
+];
+---
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestros Servicios</h2>
+      <p>Descubre todas las experiencias que tenemos preparadas para ti</p>
+    </div>
+
+    <div class="cards-grid">
+      {services.map((service) => (
+        <Card 
+          title={service.title}
+          description={service.description}
+          image={service.image}
+          icon={service.icon}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background-color: var(--color-gray-light);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 1.75rem;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+  }
+</style>

@@ -1,0 +1,179 @@
+---
+// Componente Reviews con testimonios de clientes
+
+const reviews = [
+  {
+    name: "María García",
+    role: "Bloguera de gastronomía",
+    content: "Una experiencia absolutamente excepcional. La combinación de sabores es magistral y la presentación de cada plato es una obra de arte. Volveré sin dudarlo.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+  },
+  {
+    name: "Carlos López",
+    role: "Director empresarial",
+    content: "Llevé a mis clientes importantes a eventos privados. El servicio impecable, la comida exquisita y la atmósfera perfecta. Recomendación de 10/10.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+  },
+  {
+    name: "Laura Martínez",
+    role: "Fotógrafa profesional",
+    content: "Los platos son tan hermosos que no pude dejar de fotografiarlos. La calidad de los ingredientes brilla en cada bocado. Realmente impresionante.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+  },
+  {
+    name: "Miguel Rodríguez",
+    role: "Chef independiente",
+    content: "Como profesional de la cocina, debo admitir que están haciendo un trabajo excepcional. La técnica, la creatividad y la pasión se sienten en cada plato.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+  }
+];
+---
+
+<section id="testimonios" class="reviews">
+  <div class="container">
+    <div class="section-header">
+      <h2>Lo que Dicen Nuestros Clientes</h2>
+      <p>Testimonios auténticos de personas que han disfrutado nuestra experiencia</p>
+    </div>
+
+    <div class="reviews-grid">
+      {reviews.map((review) => (
+        <div class="review-card">
+          <div class="review-header">
+            <img 
+              src={review.avatar} 
+              alt={review.name}
+              class="review-avatar"
+              loading="lazy"
+            />
+            <div class="review-info">
+              <h4 class="review-name">{review.name}</h4>
+              <p class="review-role">{review.role}</p>
+            </div>
+          </div>
+
+          <div class="review-stars">
+            {[...Array(review.rating)].map(() => (
+              <span class="star">★</span>
+            ))}
+          </div>
+
+          <p class="review-content">
+            "{review.content}"
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    background-color: var(--color-white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .review-card {
+    background-color: var(--color-gray-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--color-secondary);
+    transition: all var(--transition-normal);
+  }
+
+  .review-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .review-info {
+    flex: 1;
+  }
+
+  .review-name {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    color: var(--color-dark);
+  }
+
+  .review-role {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin: 0;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .star {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+  }
+
+  .review-content {
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 1.75rem;
+    }
+
+    .reviews-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .review-card {
+      padding: var(--spacing-md);
+    }
+  }
+</style>
